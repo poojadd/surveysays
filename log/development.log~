@@ -1,0 +1,1979 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (327.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (122.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateSurveys (20130924112812)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "surveys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130924112812')[0m
+  [1m[35m (140.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSurveys (20130924112812)
+Migrating to CreateQuestions (20130924112902)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "survey_id_id" integer, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130924112902')[0m
+  [1m[35m (180.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateQuestions (20130924112902)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "questions"[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20130924112902'
+  [1m[36m (186.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateSurveys (20130924112812)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "surveys"[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20130924112812'
+  [1m[36m (204.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSurveys (20130924112812)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "surveys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130924112812')[0m
+  [1m[35m (320.5ms)[0m  commit transaction
+Migrating to CreateQuestions (20130924112902)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "survey_id_id" integer, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130924112902')[0m
+  [1m[35m (158.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-09-24 17:09:51 +0530
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (8ms)
+
+
+Started GET "/surveys/" for 127.0.0.1 at 2013-09-24 17:10:05 +0530
+Processing by SurveysController#index as HTML
+  [1m[36mSurvey Load (0.1ms)[0m  [1mSELECT "surveys".* FROM "surveys" [0m
+  Rendered surveys/index.html.erb within layouts/application (4.1ms)
+Compiled scaffolds.css  (38ms)  (pid 4610)
+Compiled surveys.css  (26ms)  (pid 4610)
+Compiled application.css  (80ms)  (pid 4610)
+Compiled jquery.js  (2ms)  (pid 4610)
+Compiled jquery_ujs.js  (0ms)  (pid 4610)
+Compiled surveys.js  (101ms)  (pid 4610)
+Compiled application.js  (174ms)  (pid 4610)
+Completed 200 OK in 410ms (Views: 341.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:10:06 +0530
+Served asset /application.css - 200 OK (49ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:10:06 +0530
+Served asset /scaffolds.css - 200 OK (8ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:10:06 +0530
+Served asset /surveys.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:10:06 +0530
+Served asset /jquery.js - 200 OK (5ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:10:06 +0530
+Served asset /surveys.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:10:06 +0530
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:10:06 +0530
+Served asset /application.js - 200 OK (11ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:10:08 +0530
+Processing by SurveysController#new as HTML
+Completed 500 Internal Server Error in 76ms
+
+ArgumentError (No association found for name `questions'. Has it been defined yet?):
+  app/models/question.rb:4:in `<class:Question>'
+  app/models/question.rb:1:in `<top (required)>'
+  app/controllers/surveys_controller.rb:27:in `block in new'
+  app/controllers/surveys_controller.rb:27:in `times'
+  app/controllers/surveys_controller.rb:27:in `new'
+
+
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSurveys (20130924112812)
+Migrating to CreateQuestions (20130924112902)
+Migrating to CreateAnswers (20130924114408)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "content" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130924114408')[0m
+  [1m[35m (203.0ms)[0m  commit transaction
+  [1m[36m (1.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:17:44 +0530
+Processing by SurveysController#new as HTML
+Completed 500 Internal Server Error in 38ms
+
+ArgumentError (No association found for name `questions'. Has it been defined yet?):
+  app/models/question.rb:4:in `<class:Question>'
+  app/models/question.rb:1:in `<top (required)>'
+  app/controllers/surveys_controller.rb:27:in `block in new'
+  app/controllers/surveys_controller.rb:27:in `times'
+  app/controllers/surveys_controller.rb:27:in `new'
+
+
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:17:59 +0530
+Processing by SurveysController#new as HTML
+Completed 500 Internal Server Error in 43ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: survey_id):
+  app/controllers/surveys_controller.rb:27:in `block in new'
+  app/controllers/surveys_controller.rb:27:in `times'
+  app/controllers/surveys_controller.rb:27:in `new'
+
+
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.8ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:19:33 +0530
+Processing by SurveysController#new as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: survey_id):
+  app/controllers/surveys_controller.rb:27:in `block in new'
+  app/controllers/surveys_controller.rb:27:in `times'
+  app/controllers/surveys_controller.rb:27:in `new'
+
+
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:21:17 +0530
+Processing by SurveysController#new as HTML
+Completed 500 Internal Server Error in 19ms
+
+ActiveRecord::UnknownAttributeError (unknown attribute: survey_id):
+  app/controllers/surveys_controller.rb:28:in `block in new'
+  app/controllers/surveys_controller.rb:27:in `times'
+  app/controllers/surveys_controller.rb:27:in `new'
+
+
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateAnswers (20130924114408)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "answers"[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20130924114408'
+  [1m[36m (174.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateQuestions (20130924112902)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "questions"[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20130924112902'
+  [1m[36m (152.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateSurveys (20130924112812)
+Migrating to CreateQuestions (20130924112902)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "survey_id" integer, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130924112902')[0m
+  [1m[35m (227.1ms)[0m  commit transaction
+Migrating to CreateAnswers (20130924114408)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "content" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130924114408')[0m
+  [1m[35m (153.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:25:47 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (1.2ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (7.5ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (5.8ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.7ms)
+  Rendered surveys/_form.html.erb (54.4ms)
+  Rendered surveys/new.html.erb within layouts/application (70.4ms)
+Completed 200 OK in 143ms (Views: 109.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:25:48 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:25:48 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:25:48 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:25:48 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:25:48 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:25:48 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:25:48 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started POST "/surveys" for 127.0.0.1 at 2013-09-24 17:27:20 +0530
+Processing by SurveysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bUGf/6F2C06FN+uW5wq9IrT/JUCeNGUKGC3NxcXRJGA=", "survey"=>{"name"=>"Rails servey"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (30.4ms)[0m  [1mINSERT INTO "surveys" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 24 Sep 2013 11:57:20 UTC +00:00], ["name", "Rails servey"], ["updated_at", Tue, 24 Sep 2013 11:57:20 UTC +00:00]]
+  [1m[35m (136.5ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/surveys/1
+Completed 302 Found in 173ms (ActiveRecord: 167.1ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at 2013-09-24 17:27:21 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE "surveys"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered surveys/show.html.erb within layouts/application (65.6ms)
+Completed 500 Internal Server Error in 70ms
+
+ActionView::Template::Error (undefined method `title' for #<#<Class:0xb3950ee4>:0xb3611ff8>):
+    1: <% title "Survey" %>
+    2: 
+    3: <p>
+    4:   <strong>Name:</strong>
+  app/views/surveys/show.html.erb:1:in `_app_views_surveys_show_html_erb__170806163__642760068'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.6ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at 2013-09-24 17:27:48 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.1ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = 1[0m
+  Rendered surveys/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:48 +0530
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:48 +0530
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:48 +0530
+Served asset /surveys.js - 200 OK (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:48 +0530
+Served asset /surveys.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:48 +0530
+Served asset /application.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:48 +0530
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:48 +0530
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/surveys/1/edit" for 127.0.0.1 at 2013-09-24 17:27:55 +0530
+Processing by SurveysController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.1ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = 1[0m
+  Rendered surveys/_form.html.erb (4.4ms)
+  Rendered surveys/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:55 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:55 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:55 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:55 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:55 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:55 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:55 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys" for 127.0.0.1 at 2013-09-24 17:27:57 +0530
+Processing by SurveysController#index as HTML
+  [1m[35mSurvey Load (0.2ms)[0m  SELECT "surveys".* FROM "surveys" 
+  Rendered surveys/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:57 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:57 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:57 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:57 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:57 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:57 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:57 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at 2013-09-24 17:27:59 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.1ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE "surveys"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = 1
+  Rendered surveys/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:59 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:59 +0530
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:27:59 +0530
+Served asset /surveys.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:59 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:59 +0530
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:59 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:27:59 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys" for 127.0.0.1 at 2013-09-24 17:28:03 +0530
+Processing by SurveysController#index as HTML
+  [1m[36mSurvey Load (0.2ms)[0m  [1mSELECT "surveys".* FROM "surveys" [0m
+  Rendered surveys/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:03 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:03 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:03 +0530
+Served asset /surveys.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:03 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:03 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:03 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:03 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/1/edit" for 127.0.0.1 at 2013-09-24 17:28:05 +0530
+Processing by SurveysController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.1ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = 1[0m
+  Rendered surveys/_form.html.erb (2.7ms)
+  Rendered surveys/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:05 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:05 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:05 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:05 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:05 +0530
+Served asset /surveys.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:05 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:05 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys" for 127.0.0.1 at 2013-09-24 17:28:07 +0530
+Processing by SurveysController#index as HTML
+  [1m[35mSurvey Load (0.2ms)[0m  SELECT "surveys".* FROM "surveys" 
+  Rendered surveys/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:07 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:07 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:07 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:07 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:07 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:07 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:07 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:28:08 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (7.1ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (6.3ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.6ms)
+  Rendered surveys/_form.html.erb (22.4ms)
+  Rendered surveys/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 32ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:08 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:08 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:08 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:08 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:08 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:28:08 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:28:08 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:29:01 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_question_fields.html.erb (5.6ms)
+  Rendered surveys/_question_fields.html.erb (0.9ms)
+  Rendered surveys/_question_fields.html.erb (0.7ms)
+  Rendered surveys/_form.html.erb (12.1ms)
+  Rendered surveys/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 39ms (Views: 18.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:29:01 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:29:01 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:29:01 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:29:01 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:29:01 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:29:01 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:29:01 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:30:29 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_form.html.erb (5.5ms)
+  Rendered surveys/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 83ms (Views: 13.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:30:29 +0530
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:30:29 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:30:29 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:30:29 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:30:29 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:30:29 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:30:29 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:31:35 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_form.html.erb (4.8ms)
+  Rendered surveys/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:31:35 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:31:35 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:31:35 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:31:35 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:31:35 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:31:35 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:31:35 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:34:39 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_form.html.erb (3.9ms)
+  Rendered surveys/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:34:39 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:34:39 +0530
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:34:39 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:34:39 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:34:39 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:34:39 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:34:39 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:36:12 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_form.html.erb (6.2ms)
+  Rendered surveys/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 19ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:36:13 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:36:15 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:36:15 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:36:15 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:36:15 +0530
+Served asset /jquery.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:36:15 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:36:15 +0530
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:37:50 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_form.html.erb (3.9ms)
+  Rendered surveys/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 45ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:37:50 +0530
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:37:50 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:37:50 +0530
+Served asset /surveys.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:37:50 +0530
+Served asset /jquery.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:37:50 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:37:50 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:37:50 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:38:56 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_form.html.erb (5.5ms)
+  Rendered surveys/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 56ms (Views: 11.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:38:56 +0530
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:38:56 +0530
+Served asset /surveys.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:38:56 +0530
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:38:56 +0530
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:38:56 +0530
+Served asset /surveys.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:38:56 +0530
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:38:56 +0530
+Served asset /application.js - 200 OK (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:39:03 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_form.html.erb (3.4ms)
+  Rendered surveys/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 15ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:39:04 +0530
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:39:04 +0530
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:39:04 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:39:04 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:39:04 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:39:04 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:39:04 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 17:40:01 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.8ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (34.0ms)
+  Rendered surveys/_answer_fields.html.erb (0.8ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (7.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.9ms)
+  Rendered surveys/_form.html.erb (72.2ms)
+  Rendered surveys/new.html.erb within layouts/application (73.2ms)
+Completed 200 OK in 123ms (Views: 81.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 17:40:01 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 17:40:01 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 17:40:01 +0530
+Served asset /surveys.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 17:40:01 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 17:40:01 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 17:40:01 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 17:40:01 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-24 18:08:47 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (6.0ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (5.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.6ms)
+  Rendered surveys/_form.html.erb (20.8ms)
+  Rendered surveys/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 32ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-24 18:08:47 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-24 18:08:47 +0530
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-24 18:08:47 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-24 18:08:47 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-24 18:08:47 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-24 18:08:47 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-24 18:08:47 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:02:14 +0530
+Connecting to database specified by database.yml
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (1.3ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (21.5ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.8ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (6.8ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (6.9ms)
+  Rendered surveys/_form.html.erb (60.5ms)
+  Rendered surveys/new.html.erb within layouts/application (77.6ms)
+Completed 200 OK in 411ms (Views: 219.0ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:15 +0530
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:15 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:15 +0530
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:15 +0530
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:15 +0530
+Served asset /surveys.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:15 +0530
+Served asset /surveys.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:15 +0530
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/surveys/" for 127.0.0.1 at 2013-09-25 15:02:17 +0530
+Processing by SurveysController#index as HTML
+  [1m[36mSurvey Load (0.3ms)[0m  [1mSELECT "surveys".* FROM "surveys" [0m
+  Rendered surveys/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:18 +0530
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:18 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:18 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:18 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:18 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:18 +0530
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:18 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at 2013-09-25 15:02:20 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = 1[0m
+  Rendered surveys/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:20 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:20 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:20 +0530
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:20 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:20 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:20 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:20 +0530
+Served asset /application.js - 304 Not Modified (49ms)
+
+
+Started GET "/surveys" for 127.0.0.1 at 2013-09-25 15:02:24 +0530
+Processing by SurveysController#index as HTML
+  [1m[35mSurvey Load (0.2ms)[0m  SELECT "surveys".* FROM "surveys" 
+  Rendered surveys/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:24 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:24 +0530
+Served asset /scaffolds.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:24 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:02:24 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:24 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:24 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:02:24 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/surveys" for 127.0.0.1 at 2013-09-25 15:03:04 +0530
+Processing by SurveysController#index as HTML
+  [1m[36mSurvey Load (0.1ms)[0m  [1mSELECT "surveys".* FROM "surveys" [0m
+  Rendered surveys/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 17ms (Views: 9.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:03:04 +0530
+Served asset /application.css - 200 OK (11ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:03:04 +0530
+Served asset /surveys.js - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:03:04 +0530
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:03:04 +0530
+Served asset /surveys.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:03:04 +0530
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:03:04 +0530
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:03:04 +0530
+Served asset /application.js - 200 OK (1ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at 2013-09-25 15:03:36 +0530
+Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE "surveys"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."survey_id" = 1[0m
+  Rendered surveys/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:03:36 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:03:36 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:03:36 +0530
+Served asset /application.js - 304 Not Modified (48ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:03:37 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:03:37 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:03:37 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:03:37 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:07:09 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (6.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.8ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (7.3ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (5.8ms)
+  Rendered surveys/_form.html.erb (23.8ms)
+  Rendered surveys/new.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 54ms (Views: 31.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:07:09 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:07:09 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:07:09 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:07:09 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:07:09 +0530
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:07:09 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:07:09 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:08:14 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_form.html.erb (63.5ms)
+  Rendered surveys/new.html.erb within layouts/application (64.3ms)
+Completed 500 Internal Server Error in 72ms
+
+ActionView::Template::Error (undefined method `error_messages' for #<ActionView::Helpers::FormBuilder:0xa7d2a1c>):
+    1: <%= form_for(@survey) do |f| %>
+    2:     <%= f.error_messages %>
+    3: 
+    4:     <p>
+    5:       <%= f.label :name %><br/>
+  app/views/surveys/_form.html.erb:2:in `block in _app_views_surveys__form_html_erb__63518146_88357920'
+  app/views/surveys/_form.html.erb:1:in `_app_views_surveys__form_html_erb__63518146_88357920'
+  app/views/surveys/new.html.erb:3:in `_app_views_surveys_new_html_erb___599254198__618036748'
+
+
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.4ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:08:29 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_form.html.erb (3.9ms)
+  Rendered surveys/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:08:29 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:08:29 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:08:29 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:08:29 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:08:29 +0530
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:08:29 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:08:29 +0530
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:08:56 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_form.html.erb (4.3ms)
+  Rendered surveys/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:08:56 +0530
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:08:56 +0530
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:08:56 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:08:56 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:08:56 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:08:56 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:08:56 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:16:29 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (7.0ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.8ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (6.1ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (6.1ms)
+  Rendered surveys/_form.html.erb (24.7ms)
+  Rendered surveys/new.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 103ms (Views: 33.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:16:29 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:16:29 +0530
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:16:29 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:16:29 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:16:29 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:16:29 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:16:29 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:16:59 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.8ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (6.5ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.8ms)
+  Rendered surveys/_question_fields.html.erb (6.1ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.8ms)
+  Rendered surveys/_question_fields.html.erb (7.2ms)
+  Rendered surveys/_form.html.erb (24.7ms)
+  Rendered surveys/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 68ms (Views: 33.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:16:59 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:16:59 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:17:00 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:17:00 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:17:00 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:17:00 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:17:00 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:17:51 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (6.4ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.9ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (6.0ms)
+  Rendered surveys/_form.html.erb (22.9ms)
+  Rendered surveys/new.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 65ms (Views: 31.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:17:52 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:17:52 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:17:52 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:17:52 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:17:52 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:17:52 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:17:52 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:19:53 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.8ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.5ms)
+  Rendered surveys/_form.html.erb (21.5ms)
+  Rendered surveys/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 63ms (Views: 29.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:19:53 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:19:53 +0530
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:19:53 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:19:53 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:19:53 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:19:53 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:19:53 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:20:11 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (6.4ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.8ms)
+  Rendered surveys/_question_fields.html.erb (6.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.6ms)
+  Rendered surveys/_form.html.erb (22.0ms)
+  Rendered surveys/new.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 34ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:20:11 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:20:11 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:20:11 +0530
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:20:11 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:20:11 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:20:11 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:20:11 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-25 15:21:38 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (7.2ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (6.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (6.0ms)
+  Rendered surveys/_form.html.erb (24.5ms)
+  Rendered surveys/new.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 71ms (Views: 32.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-25 15:21:38 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-25 15:21:38 +0530
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-25 15:21:38 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-25 15:21:38 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-25 15:21:38 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-25 15:21:38 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-25 15:21:38 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-27 00:07:41 +0530
+Connecting to database specified by database.yml
+Processing by SurveysController#new as HTML
+  Rendered surveys/_question_fields.html.erb (1.3ms)
+  Rendered surveys/_question_fields.html.erb (0.7ms)
+  Rendered surveys/_question_fields.html.erb (0.6ms)
+  Rendered surveys/_form.html.erb (49.1ms)
+  Rendered surveys/new.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 395ms (Views: 208.9ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-27 00:07:42 +0530
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-27 00:07:42 +0530
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-27 00:07:42 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-27 00:07:42 +0530
+Served asset /application.js - 200 OK (9ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-27 00:07:42 +0530
+Served asset /surveys.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-27 00:07:42 +0530
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-27 00:07:42 +0530
+Served asset /surveys.js - 304 Not Modified (2ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-27 00:09:16 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_question_fields.html.erb (2.7ms)
+  Rendered surveys/_question_fields.html.erb (0.8ms)
+  Rendered surveys/_question_fields.html.erb (0.7ms)
+  Rendered surveys/_form.html.erb (224.0ms)
+  Rendered surveys/new.html.erb within layouts/application (224.9ms)
+Completed 200 OK in 233ms (Views: 231.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-27 00:09:16 +0530
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-27 00:09:16 +0530
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-27 00:09:16 +0530
+Served asset /surveys.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-27 00:09:16 +0530
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-27 00:09:16 +0530
+Served asset /application.js - 200 OK (1ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-27 00:09:16 +0530
+Served asset /surveys.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-27 00:09:16 +0530
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-27 00:11:00 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_question_fields.html.erb (1.1ms)
+  Rendered surveys/_question_fields.html.erb (0.5ms)
+  Rendered surveys/_question_fields.html.erb (0.4ms)
+  Rendered surveys/_form.html.erb (231.4ms)
+  Rendered surveys/new.html.erb within layouts/application (232.8ms)
+Completed 200 OK in 242ms (Views: 240.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-27 00:11:01 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-27 00:11:01 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-27 00:11:01 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-27 00:11:01 +0530
+Served asset /surveys.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-27 00:11:01 +0530
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-27 00:11:01 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-27 00:11:01 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-27 00:11:45 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_question_fields.html.erb (0.5ms)
+  Rendered surveys/_form.html.erb (43.6ms)
+  Rendered surveys/new.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 103ms (Views: 51.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-27 00:11:45 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-27 00:11:45 +0530
+Served asset /surveys.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-27 00:11:45 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-27 00:11:45 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-27 00:11:45 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-27 00:11:45 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-27 00:11:45 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-27 00:12:08 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_question_fields.html.erb (0.5ms)
+  Rendered surveys/_form.html.erb (45.4ms)
+  Rendered surveys/new.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-27 00:12:08 +0530
+Served asset /application.css - 304 Not Modified (39ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-27 00:12:08 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-27 00:12:08 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-27 00:12:08 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-27 00:12:08 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-27 00:12:08 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-27 00:12:08 +0530
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-27 00:13:29 +0530
+Processing by SurveysController#new as HTML
+Completed 500 Internal Server Error in 21ms
+
+NameError (undefined local variable or method `question' for #<SurveysController:0xb4b468b0>):
+  app/controllers/surveys_controller.rb:30:in `block (2 levels) in new'
+  app/controllers/surveys_controller.rb:30:in `times'
+  app/controllers/surveys_controller.rb:30:in `block in new'
+  app/controllers/surveys_controller.rb:27:in `times'
+  app/controllers/surveys_controller.rb:27:in `new'
+
+
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/pooja/.rvm/gems/ruby-1.9.2-p320/gems/actionpack-3.2.14.rc2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.9ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-27 00:13:50 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (1.4ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (11.2ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.8ms)
+  Rendered surveys/_form.html.erb (28.1ms)
+  Rendered surveys/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 110ms (Views: 36.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-27 00:13:50 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-27 00:13:50 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-27 00:13:50 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-27 00:13:50 +0530
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-27 00:13:50 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-27 00:13:50 +0530
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-27 00:13:50 +0530
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/surveys/new" for 127.0.0.1 at 2013-09-27 00:14:50 +0530
+Processing by SurveysController#new as HTML
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.7ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (7.2ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_answer_fields.html.erb (0.6ms)
+  Rendered surveys/_question_fields.html.erb (5.5ms)
+  Rendered surveys/_form.html.erb (22.1ms)
+  Rendered surveys/new.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 35ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-27 00:14:51 +0530
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-09-27 00:14:51 +0530
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-27 00:14:51 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.css?body=1" for 127.0.0.1 at 2013-09-27 00:14:51 +0530
+Served asset /surveys.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surveys.js?body=1" for 127.0.0.1 at 2013-09-27 00:14:51 +0530
+Served asset /surveys.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-27 00:14:51 +0530
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-27 00:14:51 +0530
+Served asset /application.js - 304 Not Modified (4ms)
